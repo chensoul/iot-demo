@@ -1,4 +1,4 @@
-package com.iot.demo.common;
+package com.iot.demo.config;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

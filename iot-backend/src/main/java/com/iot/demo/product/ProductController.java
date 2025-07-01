@@ -6,6 +6,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Validated
 @RequiredArgsConstructor
@@ -73,6 +74,21 @@ public class ProductController {
     @DeleteMapping("/{productId}/thing-model/{id}")
     public void delete(@PathVariable String productId, @PathVariable Long id) {
         thingModelService.delete(productId, id);
+    }
+
+    @PutMapping("/{id}/tags")
+    public void updateTags(@PathVariable String id, @RequestBody Map<String, String> tags) {
+        productService.updateTags(id, tags);
+    }
+
+    @GetMapping("/{id}/tags")
+    public Map<String, String> getTags(@PathVariable String id) {
+        return productService.getTags(id);
+    }
+
+    @GetMapping("/tags")
+    public List<Product> queryByTags(@RequestBody Map<String, String> tags) {
+        return productService.findByTags(tags);
     }
 
 }

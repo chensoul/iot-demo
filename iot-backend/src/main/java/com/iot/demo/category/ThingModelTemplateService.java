@@ -18,9 +18,7 @@ public class ThingModelTemplateService {
 
     @Transactional(rollbackFor = Exception.class)
     public ThingModelTemplate create(Long categoryId, ThingModelTemplate.ThingModelTemplateUpdate update) {
-        if (!TslJsonUtils.validateTsl(update.getTemplateData())) {
-            throw new IllegalArgumentException("TSL物模型JSON不合法");
-        }
+        TslJsonUtils.parseTsl(update.getTemplateData());
 
         if (productCategoryService.getById(categoryId).isEmpty()) {
             throw new IllegalArgumentException("分类ID不存在");
@@ -39,9 +37,7 @@ public class ThingModelTemplateService {
 
     @Transactional(rollbackFor = Exception.class)
     public ThingModelTemplate update(Long id, ThingModelTemplate.ThingModelTemplateUpdate update) {
-        if (!TslJsonUtils.validateTsl(update.getTemplateData())) {
-            throw new IllegalArgumentException("TSL物模型JSON不合法");
-        }
+        TslJsonUtils.parseTsl(update.getTemplateData());
 
         ThingModelTemplate template = getById(id).orElseThrow(() -> new IllegalArgumentException("物模型模版不存在"));
         template.setName(update.getName());

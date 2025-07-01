@@ -80,7 +80,6 @@ public class TslDTO {
         private Integer length; //数据长度，最大10240（text类型特有）。
         private String zero; //0的值（bool类型特有）。
         private String one; // 1的值（bool类型特有）。
-        private Map<String, Object> enumOptions;
         private TslDataTypeDTO item; // array类型的元素类型
     }
 }

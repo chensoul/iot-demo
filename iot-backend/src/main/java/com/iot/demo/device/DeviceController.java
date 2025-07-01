@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/devices")
@@ -44,5 +45,20 @@ public class DeviceController {
     @PutMapping("/{id}/disable")
     public Device disable(@PathVariable String id) {
         return deviceService.disable(id);
+    }
+
+    @PutMapping("/{id}/tags")
+    public void updateTags(@PathVariable String id, @RequestBody Map<String, String> tags) {
+        deviceService.updateTags(id, tags);
+    }
+
+    @GetMapping("/{id}/tags")
+    public Map<String, String> getTags(@PathVariable String id) {
+        return deviceService.getTags(id);
+    }
+
+    @GetMapping("/tags")
+    public List<Device> queryByTags(@RequestBody Map<String, String> tags) {
+        return deviceService.findByTags(tags);
     }
 } 

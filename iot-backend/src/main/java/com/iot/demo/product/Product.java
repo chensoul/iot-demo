@@ -56,6 +56,9 @@ public class Product {
     @Version
     private LocalDateTime version;
 
+    @Column(columnDefinition = "json")
+    private String tags; // JSON 格式存储标签，如 {"a":"1","b":"2"}
+
     @Data
     public class ProductUpdate {
         @NotBlank(message = "名称不能为空")

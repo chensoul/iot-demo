@@ -42,4 +42,7 @@ public class Device {
 
     @UpdateTimestamp
     private LocalDateTime updateTime;
+
+    @Column(columnDefinition = "json")
+    private String tags; // JSON 格式存储标签，如 {"a":"1","b":"2"}
 } 
