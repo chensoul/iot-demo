@@ -1,5 +1,9 @@
 package com.iot.demo.product;
 
+import com.iot.demo.backend.domain.product.Product;
+import com.iot.demo.backend.domain.product.ProductRepository;
+import com.iot.demo.backend.domain.product.ProductService;
+import com.iot.demo.backend.domain.product.ProductStatusEnum;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
