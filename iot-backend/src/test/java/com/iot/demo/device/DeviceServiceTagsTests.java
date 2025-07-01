@@ -1,5 +1,9 @@
 package com.iot.demo.device;
 
+import com.iot.demo.backend.domain.device.Device;
+import com.iot.demo.backend.domain.device.DeviceRepository;
+import com.iot.demo.backend.domain.device.DeviceService;
+import com.iot.demo.backend.domain.device.DeviceStatusEnum;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +32,7 @@ class DeviceServiceTagsTests {
         device.setName(unique);
         device.setDeviceSecret("secret");
         device.setProductId("product-1");
-        device.setStatus(DeviceStatusEnum.ACTIVE);
+        device.setStatus(DeviceStatusEnum.UNACTIVE);
         deviceRepository.save(device);
 
         // 批量添加标签

@@ -1,9 +1,11 @@
 package com.iot.demo.device;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.iot.demo.product.Product;
-import com.iot.demo.product.ProductService;
-import com.iot.demo.product.ProductStatusEnum;
+import com.iot.demo.backend.domain.device.Device;
+import com.iot.demo.backend.domain.device.DeviceStatusEnum;
+import com.iot.demo.backend.domain.product.Product;
+import com.iot.demo.backend.domain.product.ProductService;
+import com.iot.demo.backend.domain.product.ProductStatusEnum;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
