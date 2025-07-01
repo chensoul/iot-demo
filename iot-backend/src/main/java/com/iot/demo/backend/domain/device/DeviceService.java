@@ -198,7 +198,7 @@ public class DeviceService {
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public Map<String, Object> heartbeat(HttpServletRequest request, Consumer<Map<String, Object>> consumer) throws IOException {
+    public Map<String, Object> heartbeat(HttpServletRequest request) throws IOException {
         return doReport(request, null);
     }
 

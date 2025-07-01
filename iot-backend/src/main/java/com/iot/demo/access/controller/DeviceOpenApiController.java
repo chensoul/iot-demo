@@ -33,7 +33,7 @@ public class DeviceOpenApiController {
 
     @PostMapping("/heartbeat")
     public Map<String, Object> heartbeat(HttpServletRequest request) throws IOException {
-        return deviceService.heartbeat(request,null);
+        return deviceService.heartbeat(request);
     }
 
     @PostMapping("/report")
