@@ -150,4 +150,11 @@ public class ProductService {
         }
         return sb.toString();
     }
+
+    public List<Product> list(String categoryId) {
+        if (categoryId != null && !categoryId.isEmpty()) {
+            return listByCategoryId(categoryId);
+        }
+        return list();
+    }
 }
