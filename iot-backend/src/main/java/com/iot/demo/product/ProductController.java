@@ -16,7 +16,7 @@ public class ProductController {
 
     @GetMapping
     public List<Product> list(@RequestParam(required = false) String categoryId) {
-        return productService.list(categoryId);
+        return productService.listByCategoryId(categoryId);
     }
 
     @GetMapping("/{id}")

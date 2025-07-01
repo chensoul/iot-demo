@@ -29,7 +29,10 @@ public class ProductService {
     }
 
     public List<Product> listByCategoryId(String categoryId) {
-        return productRepository.findByCategoryId(categoryId);
+        if (categoryId != null && !categoryId.isEmpty()) {
+            return productRepository.findByCategoryId(categoryId);
+        }
+        return list();
     }
 
     public Optional<Product> getById(String id) {
@@ -149,12 +152,5 @@ public class ProductService {
             sb.append(chars.charAt(random.nextInt(chars.length())));
         }
         return sb.toString();
-    }
-
-    public List<Product> list(String categoryId) {
-        if (categoryId != null && !categoryId.isEmpty()) {
-            return listByCategoryId(categoryId);
-        }
-        return list();
     }
 }
