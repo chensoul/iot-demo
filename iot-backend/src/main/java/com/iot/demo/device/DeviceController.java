@@ -35,4 +35,14 @@ public class DeviceController {
     public void delete(@PathVariable String id) {
         deviceService.delete(id);
     }
+
+    @PutMapping("/{id}/enable")
+    public Device enable(@PathVariable String id) {
+        return deviceService.enable(id);
+    }
+
+    @PutMapping("/{id}/disable")
+    public Device disable(@PathVariable String id) {
+        return deviceService.disable(id);
+    }
 } 

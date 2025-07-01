@@ -9,18 +9,18 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "device")
+@Table(name = "device_group")
 public class DeviceGroup {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column(nullable = false, length = 40)
+    @Column(nullable = false, unique = true, length = 40)
     private String name;
 
-    private String description;
+    private Long parentId;
 
-    private String parentId;
+    private String description;
 
     @CreationTimestamp
     private LocalDateTime createTime;

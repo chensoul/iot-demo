@@ -26,6 +26,7 @@ public class DeviceService {
     @Transactional(rollbackFor = Exception.class)
     public Device create(Device device) {
         Product product = productService.getById(device.getProductId()).orElseThrow(() -> new IllegalArgumentException("产品不存在"));
+        device.setStatus(DeviceStatusEnum.UNACTIVE);
         return deviceRepository.save(device);
     }
 
@@ -43,5 +44,19 @@ public class DeviceService {
     @Transactional(rollbackFor = Exception.class)
     public void delete(String id) {
         deviceRepository.deleteById(id);
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public Device enable(String id) {
+        Device device = deviceRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("设备不存在"));
+        device.setStatus(DeviceStatusEnum.ENABLED);
+        return deviceRepository.save(device);
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public Device disable(String id) {
+        Device device = deviceRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("设备不存在"));
+        device.setStatus(DeviceStatusEnum.DISABLED);
+        return deviceRepository.save(device);
     }
 } 

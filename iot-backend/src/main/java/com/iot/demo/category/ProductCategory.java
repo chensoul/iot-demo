@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @Table(name = "product_category")
 public class ProductCategory {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank(message = "名称不能为空")
