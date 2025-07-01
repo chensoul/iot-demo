@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="831e7c4f-80ee-403b-992a-f25b53e815b9" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2zDvNtNno5NDLyqm6m8J7WMRoKl" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="flattenModules" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+    <option name="sortKey" value="BY_TIME_DESCENDING" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.ProductCategoryControllerTests.executor": "Run",
+    "JUnit.ProductCategoryControllerTests.testCreateCategoryWithInvalidName.executor": "Run",
+    "JUnit.ProductCategoryControllerTests.testDeleteCategory.executor": "Run",
+    "JUnit.ProductControllerTests.executor": "Run",
+    "JUnit.ProductControllerTests.testCreateAndGetProduct.executor": "Debug",
+    "JUnit.ProductControllerTests.testCreateProductWithTemplate.executor": "Debug",
+    "JUnit.ProductControllerTests.testProductValidation.executor": "Run",
+    "JUnit.ProductControllerTests.testUpdateAndDeleteProduct.executor": "Debug",
+    "JUnit.ThingModelControllerTests.executor": "Run",
+    "JUnit.ThingModelControllerTests.testAddServiceParameterEnumAndValidation.executor": "Run",
+    "JUnit.ThingModelControllerTests.testAddServiceParameterEnumOptions.executor": "Run",
+    "JUnit.ThingModelControllerTests.testAddServiceWithParameter.executor": "Run",
+    "JUnit.ThingModelControllerTests.testEnumOptionsFormatValidation.executor": "Run",
+    "JUnit.ThingModelControllerTests.testGetEvents.executor": "Run",
+    "JUnit.ThingModelControllerTests.testGetServices.executor": "Run",
+    "JUnit.ThingModelControllerTests.testParameterValidationErrors.executor": "Run",
+    "JUnit.ThingModelControllerTests.testReportEvent.executor": "Run",
+    "JUnit.ThingModelControllerTests.testThingModelGetById.executor": "Run",
+    "JUnit.ThingModelControllerTests.testThingModelGetByIdNotFound.executor": "Run",
+    "JUnit.ThingModelTemplateControllerTests.executor": "Run",
+    "JUnit.com.iot.demo.thingmodel in iot-backend.executor": "Run",
+    "Maven.iot-backend [clean].executor": "Run",
+    "Maven.iot-backend [compile].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/chensoul/codes/github/iot-projects/iot-demo",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.iot.demo.thingmodel" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ProductControllerTests">
+    <configuration name="ProductControllerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="iot-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.iot.demo.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.iot.demo.product" />
+      <option name="MAIN_CLASS_NAME" value="com.iot.demo.product.ProductControllerTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductControllerTests.testCreateAndGetProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="iot-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.iot.demo.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.iot.demo.product" />
+      <option name="MAIN_CLASS_NAME" value="com.iot.demo.product.ProductControllerTests" />
+      <option name="METHOD_NAME" value="testCreateAndGetProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductControllerTests.testUpdateAndDeleteProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="iot-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.iot.demo.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.iot.demo.product" />
+      <option name="MAIN_CLASS_NAME" value="com.iot.demo.product.ProductControllerTests" />
+      <option name="METHOD_NAME" value="testUpdateAndDeleteProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThingModelControllerTests.testEnumOptionsFormatValidation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="iot-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.iot.demo.thingmodel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.iot.demo.thingmodel" />
+      <option name="MAIN_CLASS_NAME" value="com.iot.demo.thingmodel.ThingModelControllerTests" />
+      <option name="METHOD_NAME" value="testEnumOptionsFormatValidation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThingModelControllerTests.testParameterValidationErrors" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="iot-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.iot.demo.thingmodel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.iot.demo.thingmodel" />
+      <option name="MAIN_CLASS_NAME" value="com.iot.demo.thingmodel.ThingModelControllerTests" />
+      <option name="METHOD_NAME" value="testParameterValidationErrors" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IotBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="iot-backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.iot.demo.IotBackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ProductControllerTests" />
+        <item itemvalue="JUnit.ProductControllerTests.testUpdateAndDeleteProduct" />
+        <item itemvalue="JUnit.ProductControllerTests.testCreateAndGetProduct" />
+        <item itemvalue="JUnit.ThingModelControllerTests.testEnumOptionsFormatValidation" />
+        <item itemvalue="JUnit.ThingModelControllerTests.testParameterValidationErrors" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26094.121" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="831e7c4f-80ee-403b-992a-f25b53e815b9" name="Changes" comment="" />
+      <created>1751278421666</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751278421666</updated>
+    </task>
+    <servers />
+  </component>
+</project>
