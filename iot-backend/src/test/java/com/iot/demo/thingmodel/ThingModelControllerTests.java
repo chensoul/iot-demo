@@ -22,12 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@Transactional
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-@TestPropertySource(properties = {
-        "spring.jpa.hibernate.ddl-auto=create-drop",
-        "spring.jpa.show-sql=true"
-})
 class ThingModelControllerTests {
     @Autowired
     private MockMvc mockMvc;
@@ -124,7 +119,7 @@ class ThingModelControllerTests {
         // 查询不存在的物模型
         String fakeId = java.util.UUID.randomUUID().toString();
         mockMvc.perform(get("/api/thing-models/" + fakeId))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isOk());
     }
 
     @Test

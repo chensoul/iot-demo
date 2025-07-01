@@ -9,6 +9,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: iot
     password: iot123
+    hikari:
+      auto-commit: true
+      minimum-idle: 8
+      maximum-pool-size: 8
+      connection-init-sql: "select 1"
   jpa:
     hibernate:
       ddl-auto: update
