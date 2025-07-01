@@ -1,10 +1,9 @@
 package com.iot.demo.product;
 
 public enum ProductProtocolTypeEnum {
-    MQTT,
-    COAP,
-    HTTP,
+    BLE,
+    ZIGBEE,
     MODBUS,
-    OPCUA,
-    OTHER;
+    OPC_UA,
+    CUSTOM;
 }

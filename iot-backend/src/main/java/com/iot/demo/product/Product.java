@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -22,11 +21,17 @@ public class Product {
     @Column(nullable = false, unique = true, length = 10)
     private String productKey;
 
+    @Column(nullable = false)
+    private String productSecret;
+
     @NotBlank(message = "名称不能为空")
     @Size(max = 40)
     @NameFormat
     @Column(nullable = false, unique = true, length = 40)
     private String name;
+    private String logo;
+    private String description;
+    private Long categoryId;
 
     @Enumerated(EnumType.STRING)
     private ProductNodeTypeEnum nodeType;
@@ -36,17 +41,29 @@ public class Product {
     private ProductNetTypeEnum netType;
     @Enumerated(EnumType.STRING)
     private ProductDataFormatEnum dataFormat;
-    private String logo;
-    private String description;
-    private String categoryId;
     @Enumerated(EnumType.STRING)
     private ProductProtocolTypeEnum protocolType;
     @Enumerated(EnumType.STRING)
     private ProductStatusEnum status;
+    @Enumerated(EnumType.STRING)
+    private ValidateTypeEnum validateType;
 
     @CreationTimestamp
     private LocalDateTime createTime;
     @UpdateTimestamp
     private LocalDateTime updateTime;
+
+    @Version
+    private LocalDateTime version;
+
+    @Data
+    public class ProductUpdate {
+        @NotBlank(message = "名称不能为空")
+        @Size(max = 40)
+        @NameFormat
+        private String name;
+
+        private String description;
+    }
 
 }

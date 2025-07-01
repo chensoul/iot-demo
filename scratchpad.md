@@ -102,31 +102,12 @@
 ## 3. 物模型(ThingModel)及模板(ThingModelTemplate)
 
 - 物模型(ThingModel)：
-    - 字段：id, productId, name, description, createTime, updateTime
+    - 字段：id, productId, name, description,templateData, createTime, updateTime
     - 说明：定义产品的属性、事件、服务。
 - 物模型模板(ThingModelTemplate)：
-    - 字段：id, templateKey, name, description, categoryId, status, version, author, tags, templateData(JSON),
+    - 字段：id, name, description, categoryId, status, version, templateData(JSON),
       usageCount, createTime, updateTime, publishTime
     - 说明：可预设常用设备类型的标准物模型，便于产品快速建模和复用。
-
-## 4. 主要数据库表建议
-
-- product（产品表）
-- product_category（产品分类表，支持parentId实现多级分类）
-- device（设备表）
-- thing_model（物模型表）
-- thing_model_property（物模型属性表）
-- thing_model_event（物模型事件表）
-- thing_model_service（物模型服务表）
-- thing_model_template（物模型模板表）
-
-## 5. 典型API需求
-
-- 产品管理：新增/编辑/删除/查询产品
-- 产品分类管理：新增/编辑/删除/查询分类，支持多级树结构
-- 设备管理：新增/编辑/删除/查询设备，批量导入导出
-- 物模型管理：新增/编辑/删除/查询物模型、属性、事件、服务
-- 物模型模板管理：新增/编辑/删除/查询模板，按分类筛选、批量应用
 
 > 说明：如需支持多租户、设备分组、扩展字段等，可在后续细化。
 

@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -15,8 +17,8 @@ import java.time.LocalDateTime;
 @Table(name = "product_category")
 public class ProductCategory {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @NotBlank(message = "名称不能为空")
     @Size(max = 40)
@@ -24,16 +26,17 @@ public class ProductCategory {
     @NameFormat
     private String name;
 
-    @Column(length = 256)
-    private String description;
-
-    private String icon;
-
-    private Integer sortOrder;
+    private String code;
 
     // 父级分类ID
-    private String parentId;
+    private Long parentId;
 
+    @CreationTimestamp
     private LocalDateTime createTime;
+
+    @UpdateTimestamp
     private LocalDateTime updateTime;
+
+    @Version
+    private LocalDateTime version;
 }

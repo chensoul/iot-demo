@@ -7,9 +7,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.transaction.annotation.Transactional;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -17,7 +15,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-public class ProductCategoryControllerTests {
+class ProductCategoryControllerTests {
     @Autowired
     private MockMvc mockMvc;
     @Autowired
@@ -27,7 +25,6 @@ public class ProductCategoryControllerTests {
     void testCreateAndGetCategory() throws Exception {
         ProductCategory category = new ProductCategory();
         category.setName("测试分类");
-        category.setDescription("描述");
         String json = objectMapper.writeValueAsString(category);
         // 创建
         String response = mockMvc.perform(post("/api/product-categories")

@@ -13,14 +13,14 @@ import java.util.Optional;
 public class ProductCategoryService {
     private final ProductCategoryRepository repository;
 
+
     @Transactional(rollbackFor = Exception.class)
     public ProductCategory create(ProductCategory category) {
-        // 名称唯一性校验
         if (repository.existsByName(category.getName())) {
             throw new IllegalArgumentException("分类名称已存在");
         }
         // 父级分类存在性校验（如有父ID）
-        if (category.getParentId() != null && !category.getParentId().isEmpty()) {
+        if (category.getParentId() != null) {
             if (!repository.existsById(category.getParentId())) {
                 throw new IllegalArgumentException("父级分类不存在");
             }
@@ -31,8 +31,7 @@ public class ProductCategoryService {
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public ProductCategory update(String id, ProductCategory update) {
-        // ID存在性校验
+    public ProductCategory update(Long id, ProductCategory update) {
         if (!repository.existsById(id)) {
             throw new IllegalArgumentException("分类ID不存在");
         }
@@ -41,7 +40,7 @@ public class ProductCategoryService {
             throw new IllegalArgumentException("分类名称已存在");
         }
         // 父级分类存在性校验（如有父ID）
-        if (update.getParentId() != null && !update.getParentId().isEmpty()) {
+        if (update.getParentId() != null) {
             if (!repository.existsById(update.getParentId())) {
                 throw new IllegalArgumentException("父级分类不存在");
             }
@@ -52,7 +51,7 @@ public class ProductCategoryService {
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public void delete(String id) {
+    public void delete(Long id) {
         repository.deleteById(id);
     }
 
@@ -60,15 +59,16 @@ public class ProductCategoryService {
         return repository.findAll();
     }
 
-    public Optional<ProductCategory> getById(String id) {
+    public Optional<ProductCategory> getById(Long id) {
         return repository.findById(id);
     }
 
-    public List<ProductCategory> getByParent(String parentId) {
+    public List<ProductCategory> getByParent(Long parentId) {
         return repository.findByParentId(parentId);
     }
 
     public List<ProductCategory> search(String keyword) {
         return repository.findByNameContaining(keyword);
     }
+
 }

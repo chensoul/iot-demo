@@ -1,8 +1,8 @@
 package com.iot.demo.product;
 
 public enum ProductStatusEnum {
-    DISABLED(0),
-    ENABLED(1);
+    DEV(0),
+    RELEASE(1);
 
     private final int value;
 

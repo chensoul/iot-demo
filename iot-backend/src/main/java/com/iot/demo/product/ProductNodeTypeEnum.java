@@ -3,7 +3,7 @@ package com.iot.demo.product;
 public enum ProductNodeTypeEnum {
     DIRECT(0),      // 直连设备
     GATEWAY(1),     // 网关设备
-    SUB(2);         // 网关子设备
+    GATEWAY_SUB(2);         // 网关子设备
 
     private final int value;
 
