@@ -10,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.util.DigestUtils;
-import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -48,7 +47,6 @@ public class DeviceSignInterceptor implements HandlerInterceptor {
 
     public void doHandler(HttpServletRequest request) throws Exception {
         String productKey = request.getHeader("X-Product-Key");
-        String productSecret = request.getHeader("X-Product-Secret");
         String deviceName = request.getHeader("X-Device-Name");
         String deviceSecret = request.getHeader("X-Device-Secret");
         String sign = request.getHeader("X-Sign");
@@ -59,20 +57,16 @@ public class DeviceSignInterceptor implements HandlerInterceptor {
             throw new IllegalArgumentException("参数不完整");
         }
 
-        String secret = Objects.toString(deviceSecret, productSecret);
-        if (!StringUtils.hasText(secret)) {
-            throw new IllegalArgumentException("缺少密钥参数");
+        Product product = productRepository.findByProductKey(productKey);
+        if (product == null) {
+            throw new IllegalArgumentException("产品不存在");
         }
 
+        String secret = Objects.toString(deviceSecret, product.getProductSecret());
         String raw = productKey + deviceName + timestamp + nonce + secret;
         String expectSign = DigestUtils.md5DigestAsHex(raw.getBytes());
         if (!expectSign.equalsIgnoreCase(sign)) {
             throw new AuthenticationException("签名校验失败");
-        }
-
-        Product product = productRepository.findByProductKey(productKey);
-        if (product == null) {
-            throw new IllegalArgumentException("产品不存在");
         }
 
         // 幂等查找
